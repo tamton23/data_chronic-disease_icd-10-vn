@@ -74,21 +74,70 @@ Sử dụng bộ lọc (filter) tập hợp các **dấu hiệu điển hình** 
 
 ### 🔍 Truy vấn Cypher (rút gọn)
 ```cypher
-// 1. GOM CÁC DẤU HIỆU COPD VÀO BỘ LỌC
+// 1. GOM TẤT CẢ CÁC "DẤU HIỆU" TỪ LỜI KHAI VÀO MỘT BỘ LỌC
 MATCH (d:Disease)
-OPTIONAL MATCH (d)-[:HAS_SYMPTOM]->(s:Symptom)
-WHERE toLower(s.node_name) CONTAINS 'khó thở' OR 'thở khò khè' ...
-OPTIONAL MATCH (d)<-[:INCREASES_RISK_OF]-(rf:RiskFactor)
-WHERE toLower(rf.node_name) CONTAINS 'khói thuốc' OR 'khí độc' ...
-OPTIONAL MATCH (d)-[:HAS_COMPLICATION]->(c:Complication)
-WHERE toLower(c.node_name) CONTAINS 'tràn khí màng phổi' OR 'suy tim' ...
 
-// 2. TÍNH ĐIỂM CHUẨN ĐOÁN
-// Điểm = (Số triệu chứng khớp *2 + Số biến chứng khớp *1.5 + Số yếu tố nguy cơ khớp) * (% khớp)
-...
-RETURN d.node_id, d.node_name, So_Trieu_Chung_Khop, So_Bien_Chung_Khop,
-       Phan_Tram_Khop, Diem_Chuan_Doan
-ORDER BY Diem_Chuan_Doan DESC LIMIT 10;
+// Quét Triệu Chứng
+OPTIONAL MATCH (d)-[:HAS_SYMPTOM]->(s:Symptom)
+WHERE toLower(s.node_name) CONTAINS 'đau đầu' 
+   OR toLower(s.node_name) CONTAINS 'đau ngực'
+   OR toLower(s.node_name) CONTAINS 'chóng mặt'
+   OR toLower(s.node_name) CONTAINS 'buồn nôn'
+   OR toLower(s.node_name) CONTAINS 'ù tai'
+
+// Quét Yếu Tố Nguy Cơ
+OPTIONAL MATCH (d)<-[:INCREASES_RISK_OF]-(rf:RiskFactor)
+WHERE toLower(rf.node_name) CONTAINS 'béo phì' 
+   OR toLower(rf.node_name) CONTAINS 'ăn mặn'
+   OR toLower(rf.node_name) CONTAINS 'hút thuốc'
+   OR toLower(rf.node_name) CONTAINS 'trên 65 tuổi'
+
+// Quét Biến Chứng (Nếu người dùng khai bệnh cũ)
+OPTIONAL MATCH (d)-[:HAS_COMPLICATION]->(c:Complication)
+WHERE toLower(c.node_name) CONTAINS 'suy tim'
+   OR toLower(c.node_name) CONTAINS 'đột quỵ'
+
+// 2. TÍNH ĐIỂM SỐ LƯỢNG KHỚP CHO TỪNG NHÓM
+WITH d, 
+     count(DISTINCT s) AS So_Trieu_Chung_Khop,
+     count(DISTINCT rf) AS So_Yeu_To_Khop,
+     count(DISTINCT c) AS So_Bien_Chung_Khop
+
+// 3. TÍNH TỔNG SỐ KHỚP VÀ BỘ LỌC NHIỄU (Khớp ít nhất 2 dấu hiệu mới xét)
+WITH d, So_Trieu_Chung_Khop, So_Yeu_To_Khop, So_Bien_Chung_Khop,
+     (So_Trieu_Chung_Khop + So_Yeu_To_Khop + So_Bien_Chung_Khop) AS Tong_So_Dau_Hieu_Khop
+WHERE Tong_So_Dau_Hieu_Khop >= 2
+
+// 4. LẤY TỔNG SỐ DỮ LIỆU CÓ THẬT TRONG DATABASE ĐỂ CHIA PHẦN TRĂM
+MATCH (d)-[:HAS_SYMPTOM]->(all_s)
+OPTIONAL MATCH (d)<-[:INCREASES_RISK_OF]-(all_rf)
+OPTIONAL MATCH (d)-[:HAS_COMPLICATION]->(all_c)
+
+WITH d, Tong_So_Dau_Hieu_Khop, So_Trieu_Chung_Khop, So_Yeu_To_Khop, So_Bien_Chung_Khop,
+     count(DISTINCT all_s) AS Tong_Triệu_Chung_DB,
+     count(DISTINCT all_rf) AS Tong_Yeu_To_DB,
+     count(DISTINCT all_c) AS Tong_Bien_Chung_DB
+
+WITH d, Tong_So_Dau_Hieu_Khop, So_Trieu_Chung_Khop, So_Yeu_To_Khop, So_Bien_Chung_Khop,
+     Tong_Triệu_Chung_DB, Tong_Yeu_To_DB, Tong_Bien_Chung_DB,
+     (Tong_Triệu_Chung_DB + Tong_Yeu_To_DB + Tong_Bien_Chung_DB) AS Tong_Tat_Ca_Dau_Hieu_DB
+
+// 5. TÍNH TỶ LỆ % VÀ ĐIỂM CHUNG CUỘC
+WITH d, Tong_So_Dau_Hieu_Khop, Tong_Tat_Ca_Dau_Hieu_DB,
+     So_Trieu_Chung_Khop, So_Yeu_To_Khop, So_Bien_Chung_Khop,
+     round((toFloat(Tong_So_Dau_Hieu_Khop) / Tong_Tat_Ca_Dau_Hieu_DB) * 100, 2) AS Phan_Tram_Khop
+
+RETURN d.node_id AS Ma_Benh, 
+       d.node_name AS Ten_Benh, 
+       So_Trieu_Chung_Khop AS Khop_Trieu_Chung,
+       So_Yeu_To_Khop AS Khop_Nguy_Co,
+       Tong_So_Dau_Hieu_Khop AS Tong_Khop, 
+       Tong_Tat_Ca_Dau_Hieu_DB AS Tong_DB,
+       Phan_Tram_Khop,
+       // Trọng số (Trọng tâm): Triệu chứng và Biến chứng quan trọng hơn Yếu tố nguy cơ
+       round((So_Trieu_Chung_Khop * 2 + So_Bien_Chung_Khop * 1.5 + So_Yeu_To_Khop) * Phan_Tram_Khop, 2) AS Diem_Chuan_Doan
+ORDER BY Diem_Chuan_Doan DESC
+LIMIT 10;
 ```
 ### 📊 Kết quả top 10 bệnh có điểm tương đồng cao nhất với bộ dấu hiệu COPD
 
