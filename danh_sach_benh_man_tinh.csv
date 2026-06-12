@@ -1,0 +1,209 @@
+﻿Ma_Benh,Ten_Benh,Nhom_Benh
+E10,Bệnh đái tháo đường típ 1,Đái tháo đường
+E10.0,"Bệnh đái tháo đường típ 
+1, kèm hôn mê",Đái tháo đường
+E10.1,"Bệnh đái tháo đường típ 
+1, kèm nhiễm toan ceton",Đái tháo đường
+E10.2,"Bệnh đái tháo đường típ 
+1, kèm biến chứng thận",Đái tháo đường
+E10.3,"Bệnh đái tháo đường típ 
+1, kèm biến chứng mắt",Đái tháo đường
+E10.4,"Bệnh đái tháo đường típ 
+1, kèm biến chứng thần 
+kinh",Đái tháo đường
+E10.5,"Bệnh đái tháo đường típ 
+1, kèm biến chứng mạch 
+máu ngoại vi",Đái tháo đường
+E10.6,"Bệnh đái tháo đường típ 
+1, kèm biến chứng xác 
+định khác",Đái tháo đường
+E10.7,"Bệnh đái tháo đường típ 
+1, kèm đa biến chứng",Đái tháo đường
+E10.8,"Bệnh đái tháo đường típ 
+1, kèm biến chứng không 
+xác định",Đái tháo đường
+E10.9,"Bệnh đái tháo đường típ 
+1, không kèm biến chứng",Đái tháo đường
+E11,Bệnh đái tháo đường típ 2,Đái tháo đường
+E11.0,"Bệnh đái tháo đường típ 
+2, kèm hôn mê",Đái tháo đường
+E11.1,"Bệnh đái tháo đường típ 
+2, kèm nhiễm toan ceton",Đái tháo đường
+E11.2,"Bệnh đái tháo đường típ 
+2, kèm biến chứng thận",Đái tháo đường
+E11.3,"Bệnh đái tháo đường típ 
+2, kèm biến chứng mắt",Đái tháo đường
+E11.4,"Bệnh đái tháo đường típ 
+2, kèm biến chứng thần 
+kinh",Đái tháo đường
+E11.5,"Bệnh đái tháo đường típ 
+2, kèm biến chứng mạch 
+máu ngoại vi",Đái tháo đường
+E11.6,"Bệnh đái tháo đường típ 
+2, kèm biến chứng xác 
+định khác",Đái tháo đường
+E11.7,"Bệnh đái tháo đường típ 
+2, kèm đa biến chứng",Đái tháo đường
+E11.8,"Bệnh đái tháo đường típ 
+2, kèm biến chứng không 
+xác định",Đái tháo đường
+E11.9,"Bệnh đái tháo đường típ 
+2, không kèm biến chứng",Đái tháo đường
+E12,"Bệnh đái tháo đường liên 
+quan đến suy dinh dưỡng",Đái tháo đường
+E12.0,"Bệnh đái tháo đường liên 
+quan đến suy dinh dưỡng, 
+kèm hôn mê",Đái tháo đường
+E12.1,"Bệnh đái tháo đường liên 
+quan đến suy dinh dưỡng, 
+kèm nhiễm toan ceton",Đái tháo đường
+E12.2,"Bệnh đái tháo đường liên 
+quan đến suy dinh dưỡng, 
+kèm biến chứng thận",Đái tháo đường
+E12.3,"Bệnh đái tháo đường liên 
+quan đến suy dinh dưỡng, 
+kèm biến chứng mắt",Đái tháo đường
+E12.4,"Bệnh đái tháo đường liên 
+quan đến suy dinh dưỡng, 
+kèm biến chứng thần kinh",Đái tháo đường
+E12.5,"Bệnh đái tháo đường liên 
+quan đến suy dinh dưỡng, 
+kèm biến chứng mạch máu 
+ngoại vi",Đái tháo đường
+E12.6,"Bệnh đái tháo đường liên 
+quan đến suy dinh dưỡng, 
+kèm biến chứng xác định 
+khác",Đái tháo đường
+E12.7,"Bệnh đái tháo đường liên 
+quan đến suy dinh dưỡng, 
+kèm đa biến chứng",Đái tháo đường
+E12.8,"Bệnh đái tháo đường liên 
+quan đến suy dinh dưỡng, 
+kèm biến chứng không xác 
+định",Đái tháo đường
+E12.9,"Bệnh đái tháo đường liên 
+quan đến suy dinh dưỡng, 
+không kèm biến chứng",Đái tháo đường
+E13,"Bệnh đái tháo đường xác 
+định khác",Đái tháo đường
+E13.0,"Bệnh đái tháo đường xác 
+định khác, kèm hôn mê",Đái tháo đường
+E13.1,"Bệnh đái tháo đường xác 
+định khác, kèm nhiễm 
+toan ceton",Đái tháo đường
+E13.2,"Bệnh đái tháo đường xác 
+định khác, kèm biến chứng 
+thận",Đái tháo đường
+E13.3,"Bệnh đái tháo đường xác 
+định khác, kèm biến chứng 
+mắt",Đái tháo đường
+E13.4,"Bệnh đái tháo đường xác 
+định khác, kèm biến chứng 
+thần kinh",Đái tháo đường
+E13.5,"Bệnh đái tháo đường xác 
+định khác, kèm biến chứng 
+mạch máu ngoại vi",Đái tháo đường
+E13.6,"Bệnh đái tháo đường xác 
+định khác, kèm biến chứng 
+xác định khác",Đái tháo đường
+E13.7,"Bệnh đái tháo đường xác 
+định khác, kèm đa biến 
+chứng",Đái tháo đường
+E13.8,"Bệnh đái tháo đường xác 
+định khác, kèm biến chứng 
+không xác định",Đái tháo đường
+E13.9,"Bệnh đái tháo đường xác 
+định khác, không kèm biến 
+chứng",Đái tháo đường
+E14,"Đái tháo đường không xác 
+định",Đái tháo đường
+E14.0,"Đái tháo đường không xác 
+định, kèm hôn mê",Đái tháo đường
+E14.1,"Đái tháo đường không xác 
+định, kèm nhiễm toan 
+ceton",Đái tháo đường
+E14.2,"Đái tháo đường không xác 
+định, kèm biến chứng thận",Đái tháo đường
+E14.3,"Đái tháo đường không xác 
+định, kèm biến chứng mắt",Đái tháo đường
+E14.4,"Đái tháo đường không xác 
+định, kèm biến chứng thần 
+kinh",Đái tháo đường
+E14.5,"Đái tháo đường không xác 
+định, kèm biến chứng 
+mạch máu ngoại vi",Đái tháo đường
+E14.6,"Đái tháo đường không xác 
+định, kèm biến chứng xác 
+định khác",Đái tháo đường
+E14.7,"Đái tháo đường không xác 
+định, kèm đa biến chứng",Đái tháo đường
+E14.8,"Đái tháo đường không xác 
+định, kèm biến chứng 
+không xác định",Đái tháo đường
+E14.9,"Đái tháo đường không xác 
+định, không kèm biến 
+chứng",Đái tháo đường
+I10,"Bệnh tăng huyết áp vô căn 
+(nguyên phát)",Tăng huyết áp
+I11,Bệnh tim do tăng huyết áp,Tăng huyết áp
+I11.0,"Bệnh tim do tăng huyết áp 
+kèm suy tim (xung huyết)",Tăng huyết áp
+I11.9,"Bệnh tim do tăng huyết áp 
+không kèm suy tim (xung 
+huyết)",Tăng huyết áp
+I12,"Bệnh thận do tăng huyết 
+áp",Tăng huyết áp
+I12.0,"Bệnh thận do tăng huyết 
+áp có kèm suy thận",Tăng huyết áp
+I12.9,"Bệnh thận do tăng huyết 
+áp không kèm suy thận",Tăng huyết áp
+I13,"Bệnh tim và bệnh thận do 
+tăng huyết áp",Tăng huyết áp
+I13.0,"Bệnh tim và bệnh thận do 
+tăng huyết áp kèm suy 
+tim (xung huyết)",Tăng huyết áp
+I13.1,"Bệnh tim và bệnh thận do 
+tăng huyết áp kèm có suy 
+thận",Tăng huyết áp
+I13.2,"Bệnh tim và bệnh thận do 
+tăng huyết áp kèm cả suy 
+tim (xung huyết) và suy 
+thận",Tăng huyết áp
+I13.9,"Bệnh tim và bệnh thận do 
+tăng huyết áp, không xác 
+định",Tăng huyết áp
+I15,Tăng huyết áp thứ phát,Tăng huyết áp
+I15.0,"Tăng huyết áp do nguyên 
+nhân mạch thận",Tăng huyết áp
+I15.1,"Tăng huyết áp thứ phát 
+do rối loạn thận khác",Tăng huyết áp
+I15.2,"Tăng huyết áp thứ phát 
+do rối loạn nội tiết",Tăng huyết áp
+I15.8,"Tăng huyết áp thứ phát 
+khác",Tăng huyết áp
+I15.9,"Tăng huyết áp thứ phát, 
+không xác định",Tăng huyết áp
+J45,"Hen phế quản [hen suyễn] 
+[hen]",Hen
+J45.0,"Hen phế quản [hen suyễn] 
+[hen] chủ yếu do dị ứng",Hen
+J45.1,"Hen phế quản [hen suyễn] 
+[hen] không dị ứng",Hen
+J45.8,"Hen phế quản [hen suyễn] 
+[hen] hỗn hợp",Hen
+J45.9,"Hen phế quản [hen suyễn] 
+[hen], không xác định",Hen
+J46,Cơn hen phế quản ác tính,Hen
+J44,"Bệnh phổi tắc nghẽn mạn 
+tính khác",Phổi tắc nghẽn mãn tính (COPD)
+J44.0,"Bệnh phổi tắc nghẽn mạn 
+tính kèm nhiễm trùng 
+đường hô hấp dưới cấp 
+tính",Phổi tắc nghẽn mãn tính (COPD)
+J44.1,"Bệnh phổi tắc nghẽn mạn 
+tính đợt cấp, không xác 
+định",Phổi tắc nghẽn mãn tính (COPD)
+J44.8,"Bệnh phổi tắc nghẽn mạn 
+tính xác định khác",Phổi tắc nghẽn mãn tính (COPD)
+J44.9,"Bệnh phổi tắc nghẽn mạn 
+tính, không xác định",Phổi tắc nghẽn mãn tính (COPD)
