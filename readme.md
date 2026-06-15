@@ -105,28 +105,23 @@ RETURN d.node_id AS Ma_Benh, d.node_name AS Ten_Benh, So_Trieu_Chung_Khop AS Kho
 ORDER BY Diem_Chuan_Doan DESC
 LIMIT 10;
 ```
-### 📊 Kết quả top 10 bệnh có điểm tương đồng cao nhất với bộ dấu hiệu COPD
+### 📊 Kết quả top bệnh có điểm tương đồng cao nhất với bộ dấu hiệu COPD
 
-| Mã bệnh | Tên bệnh | Khớp triệu chứng | Khớp biến chứng | % khớp | Điểm chuẩn đoán |
+| Mã bệnh | Tên bệnh | Khớp triệu chứng | Khớp biến chứng | % khớp | Điểm chẩn đoán |
 | --- | --- | --- | --- | --- | --- |
-| J44 | Bệnh phổi tắc nghẽn mạn tính (COPD) | 5 | 3 | 100.0 | 1450.0 |
-| J44 | Bệnh phổi tắc nghẽn mạn tính khác | 8 | 4 | 35.0 | 840.0 |
+| J44 | Bệnh phổi tắc nghẽn mạn tính khác | 8 | 4 | 35.00 | 840.00 |
 | J44.0 | Bệnh phổi tắc nghẽn mạn tính kèm nhiễm trùng đường hô hấp dưới cấp tính | 3 | 5 | 36.67 | 605.06 |
-| J44.9 | Bệnh phổi tắc nghẽn mạn tính, không xác định | 6 | 3 | 34.48 | 603.4 |
+| J44.9 | Bệnh phổi tắc nghẽn mạn tính, không xác định | 6 | 3 | 34.48 | 603.40 |
 | J44.1 | Bệnh phổi tắc nghẽn mạn tính đợt cấp, không xác định | 4 | 4 | 32.35 | 549.95 |
 | J44.8 | Bệnh phổi tắc nghẽn mạn tính xác định khác | 3 | 4 | 33.33 | 466.62 |
-| J45.9 | Hen phế quản (hen suyễn), không xác định | 5 | 2 | 20.0 | 280.0 |
-| J45.8 | Hen phế quản (hen suyễn) hỗn hợp | 4 | 1 | 19.23 | 182.69 |
-| J45 | Hen phế quản (hen suyễn) | 3 | 1 | 17.86 | 151.81 |
-| J46 | Cơn hen phế quản ác tính | 4 | 2 | 11.48 | 137.76 |
+| J45.9 | Hen phế quản [hen suyễn] [hen], không xác định | 5 | 2 | 20.00 | 280.00 |
+| J45.8 | Hen phế quản [hen suyễn] [hen] hỗn hợp | 4 | 1 | 19.23 | 182.69 |
 
 ### 💡 Nhận xét
 
-- **COPD gốc (J44)** đạt điểm tuyệt đối 1450, khớp 100% các dấu hiệu → thể hiện độ chính xác của bộ lọc.
-
-- Các mã **J44.x** (phân nhánh của COPD) đều nằm trong top 6, điểm số giảm dần do % khớp thấp hơn (chỉ 32–37%), phản ánh đúng thực tế lâm sàng: chúng là các biến thể hoặc đợt cấp, không hội tụ đầy đủ tất cả đặc điểm nền của COPD.
-
-- **Hen phế quản (J45, J46)** cũng xuất hiện (top 7–10) nhờ chia sẻ các triệu chứng như khó thở, thở khò khè. Tuy nhiên điểm chuẩn đoán chỉ bằng 10–20% so với COPD, giúp hệ thống có thể phân biệt tương đối hai bệnh lý dễ nhầm lẫn này.
+- **Bệnh phổi tắc nghẽn mạn tính khác (J44)** dẫn đầu danh sách với điểm chẩn đoán cao nhất (840.0), nhờ số lượng khớp triệu chứng vượt trội (8 triệu chứng) và khớp biến chứng tốt (4 biến chứng).
+- Các mã **J44.x** (các thể lâm sàng và phân nhánh của COPD) chiếm giữ các vị trí tiếp theo trong top 5. Điểm số và tỷ lệ phần trăm khớp của nhóm này duy trì tương đối đồng đều (khoảng 32% – 37%), phản ánh đúng thực tế lâm sàng khi các thể này chia sẻ phần lớn đặc điểm nền tảng của bệnh lý COPD nhưng có sự khác biệt về nhiễm trùng đi kèm hoặc tính chất đợt cấp.
+- **Hen phế quản (J45.9, J45.8)** xuất hiện ở cuối danh sách với điểm chẩn đoán thấp hơn hẳn (chỉ từ 182.69 đến 280.0) và tỷ lệ khớp dưới 20%. Điều này cho thấy hệ thống đã phân tách và định lượng tốt sự khác biệt giữa COPD và Hen phế quản, dù hai bệnh lý này có chung một số biểu hiện lâm sàng như khó thở hay khò khè.
 
 ### 📌 Ứng dụng
 
